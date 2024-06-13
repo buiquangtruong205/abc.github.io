@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(image/background2.jpeg);
+    font-family: "Hahmlet", serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container{
+    width: 500px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px 0 #0000008a;
+}
+
+.register-container h2{
+    margin-bottom: 20px;
+    font-size: 33px;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="email"],
+.register-container input[type="tel"],
+.register-container input[type="submit"]{
+    width: 100%;
+    font-family: "Hahmlet", serif;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.register-container input[type="checkbox"]{
+    font-size: 17px;
+    margin-left: 20px;
+    margin-right: 1000px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.register-container .p{
+    font-size: 16px;
+    margin-top: -46px;
+    margin-right: 325px;
+}
+.register-container input[type="submit"]{
+    box-shadow: 0 0 15px 0 #00000056;
+    background-color: rgb(44, 208, 244);
+    font-size: 22px;
+    font-family: "Hahmlet", serif;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-container input[type="submit"]:hover{
+    color: #ffffff;
+    background-color: rgb(36, 179, 211);
+}
+
+.register-container p{
+    margin: 10px 0;
+    font-size: 19px;
+}
+
+.register-container a{
+    text-decoration: none;
+    color: rgb(44, 208, 244);
+    transition: 0.3s;
+}
+
+.register-container a:hover{
+    color: darkorange;
+}

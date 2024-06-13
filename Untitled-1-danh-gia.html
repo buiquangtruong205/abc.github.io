@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đánh Giá</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0fc7f5;
+        font-size: 18px;
+    }
+
+    header {
+        background-color: #45caeb;
+        color: white;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+
+    .header-background {
+        background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230803/pngtree-a-field-of-green-grass-with-a-blue-sky-image_12990563.jpg');
+        background-size: cover;
+        height: 200px;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: 75px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #ffffff;
+        margin: 0;
+    }
+
+    nav {
+        background-color: #45caeb;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    nav ul li a:hover {
+        color: black;
+        background-color: aqua;
+        border-radius: 3px;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+    }
+
+    .input-container {
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .input {
+        width: 200px;
+        height: 30px;
+        padding: 10px;
+        border: 2px solid black;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 10px;
+    }
+
+    .input:focus {
+        outline: none;
+        border: 0.5px solid black;
+        box-shadow: -5px -5px 0px black;
+    }
+
+    .icon {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    main{
+        width:100%;
+        height:500px;
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+    }
+
+    .rating{
+        display: flex;
+        justify-content: left;
+        flex-direction: row-reverse;
+        height:50px;
+    }
+
+    .cart-link {
+        color: white;
+        text-decoration: none;
+        border: 1px solid white;
+        padding: 8px 15px;
+        border-radius: 4px;
+    }
+
+    .rating:not(:checked) > input {
+        position: absolute;
+        appearance: none;
+    }
+
+    .rating:not(:checked) > label {
+        cursor: pointer;
+        font-size: 30px;
+        color: #666;
+    }
+
+    .rating:not(:checked) > label:before {
+        content: '★';
+    }
+
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+        color: #e58e09;
+    }
+
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: #ff9e0b;
+    }
+
+    .rating > input:checked ~ label {
+        color: #ffa723;
+    }
+
+    .form-container {
+        width: 450px;
+        background: linear-gradient(#a2e9d7, #212121) padding-box,
+                    linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: 50px;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .form-container button:active {
+        scale: 0.95;
+    }
+
+    .form-container .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-container .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .form-container .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #717171;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .form-container .form-group textarea {
+        width: 100%;
+        padding: 12px 8px;
+        border-radius: 8px;
+        resize: none;
+        color: #fff;
+        height: 96px;
+        border: 1px solid #414141;
+        background-color: transparent;
+        font-family: inherit;
+    }
+
+    .form-container .form-group input::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group input:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-group textarea:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-submit-btn {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: flex-start;
+        font-family: inherit;
+        color: #717171;
+        font-weight: 600;
+        width: 40%;
+        background: #313131;
+        border: 1px solid #414141;
+        padding: 12px 16px;
+        font-size: inherit;
+        gap: 8px;
+        margin-top: 8px;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    .form-container .form-submit-btn:hover {
+        background-color: #fff;
+        border-color: #fff;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #333; 
+        color: #fff; 
+        padding: 20px; 
+        margin-top: 150px;
+    }
+
+    .phan1, .phan2, .phan3 {
+        flex: 1 1 30%; 
+        padding: 0 10px; 
+    }
+
+    ul {
+        list-style-type: none; 
+        padding: 0;
+    }
+
+    li {
+        padding: 5px 0; 
+    }
+
+    @media screen and (max-width: 1200px) {
+        .a1 {
+            width: calc(33.33% - 20px);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .a1 {
+            width: calc(50% - 20px);
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .a1 {
+            width: calc(100% -20px);
+        }
+    }
+</style>
+<body>
+    <header>
+        <div class="header-background">
+            <h1>PINGPING</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Untitled-1.html">SHOP</a></li>
+                <li><a href="Untitled-1-danh-gia.html">ĐÁNH GIÁ</a></li>
+                <li><a href="./sukien.html">SỰ KIỆN</a></li>
+                <li><a href="Untitled-1.html" class="">QUAY LẠI</a></li>
+            </ul>
+            <div class="search-box">
+                <div class="input-container">
+                    <input type="text" name="text" class="input" placeholder="Tìm kiếm ...">
+                    <span class="icon"> 
+                        <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </span>
+                </div>
+            </div>
+            <a href="giohang.html" class="cart-link">GIỎ HÀNG</a>
+        </nav>
+    </header>
+    <main>     
+        <div class="form-container">
+            <form class="form" id="feedback-form">
+                <div class="form-group">
+                    <label for="star-rating" style="font-size: 15px;">Đánh giá sao</label>
+                    <div class="rating">
+                        <input value="5" name="rate" id="star5" type="radio">
+                        <label title="text" for="star5"></label>
+                        <input value="4" name="rate" id="star4" type="radio">
+                        <label title="text" for="star4"></label>
+                        <input value="3" name="rate" id="star3" type="radio" checked="">
+                        <label title="text" for="star3"></label>
+                        <input value="2" name="rate" id="star2" type="radio">
+                        <label title="text" for="star2"></label>
+                        <input value="1" name="rate" id="star1" type="radio">
+                        <label title="text" for="star1"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="feedback" style="font-size: 15px;">Phản hồi</label>
+                    <textarea required="" cols="50" rows="10" id="feedback"></textarea>
+                </div>
+                <button type="submit" class="form-submit-btn">GỬI PHẢN HỒI</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="phan1">
+            <ul>
+                <li>CHĂM SÓC KHÁCH HÀNG</li>
+                <li>Trải nghiệm mua sắm 100% hài lòng</li>
+                <li>Hỏi đáp - FAQs</li>
+                <li>KIẾN THỨC MẶC ĐẸP</li>
+                <li>Hướng dẫn chọn size</li>
+                <li>Blog</li>
+                <li>Group mặc đẹp sống chất</li>
+            </ul>
+        </div>
+        <div class="phan2">
+            <ul>
+                <li>ĐỊA CHỈ LIÊN HỆ</li>
+                <li>Văn phòng và trung tâm vận hành Hà Nội: Tầng 3-4, Tòa nhà BMM, KM2, Đường Phùng Hưng, Phường Phúc La, Quận Hà Đông, TP Hà Nội</li>
+                <li>Văn phòng HCM: Lầu 1, Số 163 Trần Trọng Cung, Phường Tân Thuận Đông, Quận 7, Tp. Hồ Chí Minh</li>
+                <li>Trung tâm R&D: Tầng 2, NXLP - 24, Khu The Manhattan - Vinhomes Grand Park, TP. Thủ Đức, TP. HCM</li>
+                <li>Trung tâm vận hành Hồ Chí Minh: QQ8F+F28, Đường Số 98, Phường Thạnh Mỹ Lợi, Quận 2, Thành phố Hồ Chí Minh</li>
+            </ul>
+        </div>
+        <div class="phan3">
+            <ul>
+                <li>TÀI LIỆU - TUYỂN DỤNG</li>
+                <li>Tuyển dụng</li>
+                <li></li>
+                <li>Đăng ký bản quyền</li>
+                <li>VỀ COOLMATE</li>
+                <li>Coolmate 101</li>
+                <li>DVKH xuất sắc</li>
+                <li>Câu chuyện về Coolmate</li>
+                <li>Nhà máy</li>
+                <li>Care & Share</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".form-submit-btn").click(function(event){
+                event.preventDefault(); 
+
+                alert("Cảm ơn bạn! Phản hồi của bạn đã được ghi nhận.");
+
+                $("#feedback-form")[0].reset();
+            });
+        });
+    </script>
+</body>
+</html>

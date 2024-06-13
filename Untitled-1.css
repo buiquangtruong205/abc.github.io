@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.dangnhap{
+    color: #0056b3;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+}
+.dangnhap:hover{
+    color:rgb(255, 255, 255);
+}
+header {
+    background-color: #45caeb;
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.header-background {
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230803/pngtree-a-field-of-green-grass-with-a-blue-sky-image_12990563.jpg');
+    background-size: cover;
+    height: 200px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    font-size: 75px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    margin: 0;
+}
+
+nav {
+    background-color: #45caeb;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: black;
+    background-color: aqua;
+    border-radius: 3px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.input-container {
+    position: relative;
+    margin-right: 20px;
+}
+
+.input {
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+
+.input:focus {
+    outline: none;
+    border: 0.5px solid black;
+    box-shadow: -5px -5px 0px black;
+}
+
+.icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cart-link {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+main {
+    display: flex;
+    margin-left: 25px;
+    background-color: #c0eefa;
+}
+
+main .trai {
+    flex: 0 0 20%;
+    background-color: #f0f0f0;
+}
+select{
+    width:90px;
+    height:45px;
+    margin-top: 10px;
+    border-radius: 7.5px;
+    border-width: 2px;
+    font-weight:bold ;
+}
+
+main .phai {
+    flex: 0 0 80%;
+    border-left: 3px solid black;
+    display: block;
+}
+main .phai h2{
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    color:#45caeb;
+}
+.menu {
+    padding: 10px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.tieude {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+.sanpham {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.a1 {
+    width:250px;
+    margin-bottom: 20px;
+    margin-right: 25px; 
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px #2d2626;
+    background-color: #f0f0f0;
+    display:block;
+}
+
+.a1:hover {
+    transform: translateY(-10px);
+  }
+.a1 img {
+    width: 100%;
+    height: auto;
+}
+
+.a1 h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.a1 p {
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+hr{
+    height: 5px;
+    background-color: #d5e355;
+    width:950px;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px; 
+}
+
+
+.phan1, .phan2, .phan3 {
+    flex: 1 1 30%; 
+    padding: 0 10px; 
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+li {
+    padding: 5px 0; 
+}
+
+@media screen and (max-width: 1200px) {
+    .a1 {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .a1 {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .a1 {
+        width: calc(100% -20px);
+    }
+}

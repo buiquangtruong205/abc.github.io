@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url(./anhthuong.jpg);
+        background-size: cover;
+        background-position: center;
+        font-size: calc(12px + 0.5vw);
+        position: relative;
+    }
+    .nen {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        opacity: 0.75;
+        padding: 10px;
+    }
+    .nen nav ul {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+    }
+    .nen nav ul li {
+        margin-right: 20px;
+    }
+    .nen nav ul li a {
+        color: #3c3939;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 700;
+    }
+    .nen nav ul li a:hover {
+        color: aqua;
+    }
+    .mainbox{
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin-top: 50px;
+    }
+    .mainbox::after{
+        position: absolute;
+        content:"";
+        width: 100%;
+        height: 100%;
+        background: url(./anhkimchi.jpg) no-repeat;
+        background-size: 5%;
+        left:5%;
+        top:48%;
+        transform: rotate(90deg);
+    }
+    .box{
+        width: 100%;
+        height: 100%;
+        display: inline;
+        position: absolute;
+        border-radius: 50%;
+        border: 10px solid rgb(203, 252, 27);
+        overflow: hidden;
+        transition:all ease-in-out 5s;
+        transform: rotate(90deg);
+    }
+    span{
+        width:100%;
+        height: 100%;
+        display:inline-block;
+        position: absolute;
+    }
+    .span1{
+        clip-path: polygon(0 17% , 0 50%, 50% 50%);
+        background-color: green;
+    }
+    .span2{
+        clip-path: polygon(0 17% , 30% 0, 50% 50%);
+        background-color: rgb(241, 20, 68);
+    }
+    .span3{
+        clip-path: polygon(30% 0 , 71% 0%, 50% 50%);
+        background-color: rgb(23, 105, 138);
+    }
+    .span4{  
+        clip-path: polygon(71% 0 , 100% 18%, 50% 50%);
+        background-color: green;
+    }
+    .span5{
+        clip-path: polygon(100% 18% , 100% 50%, 50% 50%);
+        background-color: rgb(94, 60, 187);
+    }
+    .box2 .span3{
+        background-color: aquamarine;
+    }
+    .box2{
+        width:100%;height:100%;
+        transform: rotate(180deg);
+    }
+    .box2 .span1{
+        background: #333;
+    }
+    .font{
+        color:#fff;
+        font-size:20px;
+        }
+    .box1 .span1 h5{
+        font-size: 16px;
+        position: absolute;
+        top:39%;
+        right:62%;
+        transform: rotate(200deg);
+        text-align: center;
+
+    }
+    .box1 .span2 h5{
+        font-size: 14px;
+        position: absolute;
+        top:25%;
+        right:50%;
+        transform: rotate(-130deg);
+        text-align: center;
+
+    }
+    .box1 .span3 h5{
+        font-size: 22px;
+        position: absolute;
+        top:20%;
+        right:41%;
+        transform: rotate(-90deg);
+        text-align: center;
+
+    }
+    .box1 .span4 h5{
+        font-size: 14px;
+        position: absolute;
+        top:25%;
+        right:10%;
+        transform: rotate(-45deg);
+        text-align: center;
+
+    }
+    .box1 .span5 h5{
+        font-size: 22px;
+        position: absolute;
+        top:38%;
+        right:7%;
+        transform: rotate(-15deg);
+        text-align: center;
+
+    }
+    .box2 .span1 h5{
+        font-size: 30px;
+        position: absolute;
+        top:36%;
+        right:67%;
+        transform: rotate(200deg);
+        text-align: center;
+
+    }
+    .box2 .span2 h5{
+        position: absolute;
+        top:22%;
+        right:60%;
+        transform: rotate(-130deg);
+        text-align: center;
+
+    }
+    .box2 .span3 h5{
+        font-size: 15px;
+        position: absolute;
+        top:15%;
+        right:30%;
+        transform: rotate(270deg);
+        text-align: center;
+
+    }
+    .box2 .span4 h5{
+        font-size: 20px;
+        position: absolute;
+        top:29%;
+        right:26.5%;
+        transform: rotate(310deg);
+        text-align: center;
+
+    }
+    .box2 .span5 h5{
+        font-size: 25px;
+        position: absolute;
+        top:39%;
+        right:11%;
+        transform: rotate(-20deg);
+        text-align: center;
+
+    }
+    .spin {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width:75px;
+        height:75px;
+        border-radius: 50%;
+        border: 4px solid white;
+        background: #1D76E5;
+        color : #fff;
+        box-shadow: 0 5px 20px #000;
+        font-weight: bold;
+        font-size: 20px;
+        cursor:pointer;
+        z-index: 1000;
+    }
+    .spin:active {
+        width: 14.5%;
+        height: 14.5%;
+        font-size: 1.4em;
+    }
+    .mainbox .animate::after {
+        animation: animateArrow 0.7s ease infinite;
+    }
+    audio {
+        display: none;
+    }
+    @keyframes animateArrow {
+        50% {
+            right: -50px;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="nen">
+    <nav>
+        <ul>
+            <li><a href="Untitled-1.html">SHOP</a></li>
+            <li><a href="Untitled-1-danh-gia.html">ĐÁNH GIÁ</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="mainbox" id="mainbox">
+    <div class="box" id="box">
+        <div class="box1">
+            <span class="font span1"><h5>Giải khuyến khích !</h5></span>
+            <span class="font span2"><h5>Giải nhì !</h5></span>
+            <span class="font span2"><h5>Phẩn thưởng khuyến khích 🎁</h5></span>
+            <span class="font span3"><h5>Giải ba !</h5></span>
+            <span class="font span4"><h5>Phẩn thưởng khuyến khích 🎁</h5></span>
+            <span class="font span5"><h5>Giải ba !</h5></span>
+        </div>
+        <div class="box2">
+            <span class="font span1"><h5>Giải nhất !</h5></span>
+            <span class="font span2"><h5>Giải huyền bí !</h5></span>
+            <span class="font span3"><h5>Phẩn thưởng khuyến khích 🎁</h5></span>
+            <span class="font span4"><h5>Ô bí mật</h5></span>
+            <span class="font span5"><h5>📦📦📦📦</h5></span>
+        </div>
+    </div>
+   
+    <button class="spin" id="spinButton">Spin</button>
+</div>
+<audio controls="controls" id="wheel" src="C:\Users\Admin\Downloads\am-thanh-vong-quay-may-man-ngan-www_tiengdong_com.mp3" type="audio/mp3"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function shuffle(array) {
+        var currentIndex = array.length,
+            randomIndex;
+
+        while (0 != currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+
+    function spin() {
+        var wheel = document.getElementById("wheel");
+        wheel.play(); 
+
+        var box = document.getElementById("box");
+        var element = document.getElementById("mainbox");
+
+        let selectedItem = "";
+        let discount = 0;
+
+        let AC = shuffle([1890, 2250, 2610]);
+        let Camera = shuffle([1850, 2210, 2570]);
+        let PS = shuffle([1810, 2170, 2530]);
+        let Headset = shuffle([1750, 2110, 2470]);
+        let Drone = shuffle([1630, 1990, 2350]);
+        let ROG = shuffle([1570, 1930, 2290]);
+
+        let results = shuffle([
+            AC[0],
+            Camera[0],
+            PS[0],
+            Headset[0],
+            Drone[0],
+            ROG[0]
+        ]);
+        if (AC.includes(results[0])) {
+            selectedItem = "Mã giảm giá 20%";
+            discount = 20;
+        }
+        if (Camera.includes(results[0])) selectedItem = "Bạn đã mất lượt";
+        if (PS.includes(results[0])) {
+            selectedItem = "Mã giảm giá 20%";
+            discount = 20;
+        }
+        if (Headset.includes(results[0])) selectedItem = "Bạn được free 1 món đồ.";
+        if (Drone.includes(results[0])) selectedItem = "Chúc bạn may mắn lần sau.";
+        if (ROG.includes(results[0])) {
+            selectedItem = "Bạn bị trừ 20k trong tài khoản 🤣";
+            discount = -20000;
+        }
+
+        box.style.setProperty('transition', "all ease 5s");
+        box.style.transform = "rotate(" + results[0] + "deg)";
+        element.classList.add("animate");
+        setTimeout(function () {
+            Swal.fire({
+                title: "CHÚC MỪNG!",
+                text: selectedItem,
+                imageUrl: "anhwin.jpg",
+                imageHeight: 400,
+                imageWidth: 200,
+                imageAlt: "Ảnh chiến thắng",
+            });
+
+            localStorage.setItem('spinResult', JSON.stringify({
+                item: selectedItem,
+                discount: discount
+            }));
+        }, 6000);
+
+        setTimeout(function () {
+            box.style.setProperty('transition', "initial");
+            box.style.transform = "rotate(90deg)";
+        }, 6000);
+    }
+
+    document.getElementById("spinButton").addEventListener("click", spin);
+</script>
+</body>
+</html>

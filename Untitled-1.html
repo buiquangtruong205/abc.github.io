@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINGPING</title>
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <h1>PINGPING</h1>
+            <a href="login (1).html" class="dangnhap">ĐĂNG NHẬP/ĐĂNG KÍ</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Untitled-1.html">SHOP</a></li>
+                <li><a href="Untitled-1-danh-gia.html">ĐÁNH GIÁ</a></li>
+                <li><a href="sukien.html">SỰ KIỆN</a></li>
+            </ul>
+            <div class="search-box">
+                <div class="input-container">
+                    <input type="text" name="text" class="input" placeholder="Tìm kiếm ...">
+                    <span class="icon"> 
+                    </span>
+                  </div>
+            </div>
+            <a href="giohang.html" class="cart-link" onclick="toggleCart()">GIỎ HÀNG <span id="cart-count">(0)</span></a>
+        </nav>
+    </header>
+    <main>
+        <div class="trai">
+            <select onchange="luachon()">
+                <option value="Tất cả">Tất cả</option>
+                <option value="Áo thun">Áo thun</option>
+                <option value="Áo Vest">Áo Vest</option>
+                <option value="Áo khoác">Áo khoác</option>
+                <option value="Quần áo da">Quần áo da</option>
+            </select>
+        </div>
+        <div class="phai" id="tatca">
+            <div class="tieude" id="tieude-aothun">
+                <h2>Áo thun</h2>
+            </div>
+            <div class="sanpham" id="aothun-sanpham">
+                <div class="a1">
+                    <img src="Ao_thun_oversize_basic_84RISINGshawdo1.webp" alt="Áo Thun Oversize Basics 84RISING">
+                    <h3>Áo Thun Oversize Basics 84RISING</h3>
+                    <p><i>Giá: 349.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo Thun Oversize Basics 84RISING', 239000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="Ao_thun_oversize_84RISING_Chuot_Mickey_Disneyshaow1.webp" alt="Áo Thun Oversize 84RISING Chuột Mickey">
+                    <h3>Áo Thun Oversize 84RISING Chuột Mickey</h3>
+                    <p><i>Giá:299.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo Thun Oversize 84RISING Chuột Mickey', 299000)">Thêm giỏ hàng</button>
+                </div> 
+                <div class="a1">
+                    <img src="84rs.rep.2_32.webp" alt="Áo Thun Oversize 84RISING REPRESENT">
+                    <h3>Áo Thun Oversize 84RISING REPRESENT</h3>            
+                    <p><i>Giá:179.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo Thun Oversize 84RISING REPRESENT', 179000)">Thêm giỏ hàng</button>
+                </div> 
+                <div class="a1">
+                    <img src="_CMM0028.png" alt="Áo Thun Nam Boxy 84RISING Nhoè">
+                    <h3>Áo Thun Nam Boxy 84RISING Nhoè</h3>
+                    <p><i>Giá:179.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo Thun Nam Boxy 84RISING Nhoè', 179000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="Ao_thun_oversize_84RISING_Chuot_Mickey_Disneyshaow1.webp" alt="Áo Thun Oversize 84RISING Mickey Mouse">
+                    <h3>Áo Thun Oversize 84RISING Mickey Mouse</h3>
+                    <p><i>Giá:399.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo Thun Oversize 84RISING Mickey Mouse', 399000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="84springsum10_29.webp" alt="Áo Thun Relaxed Fit 84RISING Donald Duck">
+                    <h3>Áo Thun Relaxed Fit 84RISING Donald Duck</h3>
+                    <p><i>Giá:400.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo Thun Relaxed Fit 84RISING Donald Duck', 400000)">Thêm giỏ hàng</button>
+                </div>        
+            </div>
+            <hr>
+            <div class="tieude" id="tieude-aovest">
+                <h2>Áo vest</h2>
+            </div>
+            <div class="sanpham" id="aovest-sanpham">
+                <div class="a1">
+                    <img src="vd81 (4).jpg" alt="81 BỘ VEST NAM TÍM THAN 1 NÚT">
+                    <h3>81 BỘ VEST NAM TÍM THAN 1 NÚT</h3>
+                    <p><i>Giá: 369.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('81 BỘ VEST NAM TÍM THAN 1 NÚT', 369000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="vd87 (4).jpg" alt="BỘ VEST NAM NÂU ĐẬM DÀY 2 NÚT 87">
+                    <h3>BỘ VEST NAM NÂU ĐẬM DÀY 2 NÚT 87</h3>
+                    <p><i>Giá: 399.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('BỘ VEST NAM NÂU ĐẬM DÀY 2 NÚT 87', 399000)">Thêm giỏ hàng</button>
+                </div> 
+                <div class="a1">
+                    <img src="vd202 (1).jpg" alt="BỘ VEST NAM XÁM CARO 1 NÚT 202">
+                    <h3>BỘ VEST NAM XÁM CARO 1 NÚT 202</h3>
+                    <p><i>Giá: 499.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('BỘ VEST NAM XÁM CARO 1 NÚT 202', 499000)">Thêm giỏ hàng</button>
+                </div> 
+                <div class="a1">
+                    <img src="vd81 (4).jpg" alt="BỘ VEST NAM ĐỎ RƯỢU 1 NÚT 07">
+                    <h3>BỘ VEST NAM ĐỎ RƯỢU 1 NÚT 07</h3>
+                    <p><i>Giá: 350.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('BỘ VEST NAM ĐỎ RƯỢU 1 NÚT 07', 350000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="vd205 (9).jpg" alt="205 BỘ VEST NAM ĐEN SỌC 1 NÚT">
+                    <h3>205 BỘ VEST NAM ĐEN SỌC 1 NÚT</h3>
+                    <p><i>Giá: 399.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('205 BỘ VEST NAM ĐEN SỌC 1 NÚT', 399000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="294_end (1).jpg" alt="294 BỘ VEST NAM ĐEN TÍM 2 NÚT">
+                    <h3>294 BỘ VEST NAM ĐEN TÍM 2 NÚT TRUNG NIÊN</h3>
+                    <p><i>Giá: 399.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('294 BỘ VEST NAM ĐEN TÍM 2 NÚT TRUNG NIÊN', 399000)">Thêm giỏ hàng</button>
+                </div>         
+            </div>
+           <hr>
+            <div class="tieude" id="tieude-aokhoac">
+                <h2>Áo khoác</h2>
+            </div>
+            <div class="sanpham" id="aokhoac-sanpham">
+                <div class="a1">
+                    <img style="width: 250px; height: 370px;" src="Ao-khoac-jacket-form-rong-oversize-7-2-Ao-khoac-trang-be-ZiZoou-Store_d2326907-0b2b-4df8-8834-089f33a6e2c3.webp" alt="Áo khoác Nam Nữ form rộng - Youthful Oversized Jacket in Beige">
+                    <h3 style="font-size: 15px;">Áo khoác Nam Nữ form rộng - Youthful Oversized Jacket in Beige</h3>
+                    <p><i>Giá:550.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo khoác Nam Nữ form rộng - Youthful Oversized Jacket in Beige', 550000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img style="width: 250px; height: 370px;" src="Ao-khoac-jacket-form-rong-oversize-7-4-Ao-khoac-den-ZiZoou-Store_50045ab4-983d-4f04-86c5-7aa6c35d6f61.webp" alt="Áo khoácNam Nữ Oversized Jacket in Black">
+                    <h3 style="font-size: 15px;">Áo khoác Nam Nữ Oversized Jacket in Black</h3>
+                    <p><i>Giá: 550.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo khoác Nam Nữ Oversized Jacket in Black', 550000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="1-46bb3b3b-8e84-478a-9e38-ab3e386f5e16.jpg" alt="Áo khoác Teelab Local Brand Unisex Tweed striped fabric jacket AK098" style="width: 250px; height: 370px;">
+                    <h3 style="font-size: 15px;">Áo khoác Teelab Local Brand Unisex Tweed striped fabric jacket AK098</h3>
+                    <p><i>Giá: 329.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo khoác Teelab Local Brand Unisex Tweed striped fabric jacket AK098', 329000)">Thêm giỏ hàng</button>
+                </div> 
+
+
+                <div class="a1">
+                    <img style="width: 250px; height: 370px;" src="ak081.jpg" alt="Áo khoác Nam Nữ form rộng - Youthful Oversized Jacket in Beige">
+                    <h3 style="font-size: 15px;">Áo khoác Nam Nữ form rộng - Oversized Jacket</h3>
+                    <p><i>Giá:500.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo khoác Nam Nữ form rộng - Youthful Oversized Jacket in Beige', 550000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img style="width: 250px; height: 370px;" src="ak092 (2).jpg" alt="Áo khoácNam Nữ Oversized Jacket in Black">
+                    <h3 style="font-size: 15px;">Áo khoác Nam Nữ form rộng - Youthful Oversized Jacket in Beige</h3>
+                    <p><i>Giá: 550.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo khoác Nam Nữ Oversized Jacket in Black', 550000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="z5172220784079-d86a7d4f60593eb8e2c94416a4bff318.jpg" alt="Áo khoác Teelab Local Brand Unisex Tweed striped fabric jacket AK098" style="width: 250px; height: 370px;">
+                    <h3 style="font-size: 15px;">Áo khoác dù Paradox® SERENE</h3>
+                    <p><i>Giá: 600.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Áo khoác Teelab Local Brand Unisex Tweed striped fabric jacket AK098', 329000)">Thêm giỏ hàng</button>
+            </div>
+           <hr>
+            <div class="tieude" id="tieude-quanaoda">
+                <h2>Quần áo da</h2>
+            </div>
+            <div class="sanpham" id="quanaoda-sanpham">
+                <div class="a1">
+                    <img src="images.jpg" alt="COMBO QUẦN JEANS NAM + ÁO KHOÁC JEAN NAM CAO CẤP" style="width:250px; height:370px;">
+                    <h3>COMBO QUẦN JEANS NAM + ÁO KHOÁC JEAN NAM CAO CẤP</h3>
+                    <p><i>Giá: 499.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('COMBO QUẦN JEANS NAM + ÁO KHOÁC JEAN NAM CAO CẤP', 499000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="cbc9b4ee448296cf653a8d61d4974655.jpg" alt="Set bộ đồ Jean nữ cao cấp gồm Quần Jean dài + áo khoác Jean" style="width:250px; height:370px;">
+                    <h3>Set bộ đồ Jean nữ cao cấp gồm Quần Jean dài + áo khoác Jean</h3>
+                    <p><i>Giá: 1.350.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Set bộ đồ Jean nữ cao cấp gồm Quần Jean dài + áo khoác Jean', 1350000)">Thêm giỏ hàng</button>
+                </div> 
+                <div class="a1">
+                    <img src="quan-ao-bao-ho-tho-han_5ded0e703f1b4d87b19fe94977e43382_1024x1024.webp" alt="BỘ QUẦN ÁO THỢ HÀN DA BÒ CHỊU NHIỆT ĐỘ CAO CHẤT LIỆU DA" style="width:250px; height:370px;">
+                    <h3>BỘ QUẦN ÁO THỢ HÀN DA BÒ CHỊU NHIỆT ĐỘ CAO CHẤT LIỆU DA</h3>
+                    <p><i>Giá: 1.295.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('BỘ QUẦN ÁO THỢ HÀN DA BÒ CHỊU NHIỆT ĐỘ CAO CHẤT LIỆU DA', 1295000)">Thêm giỏ hàng</button>
+                </div> 
+                <div class="a1">
+                    <img src="ao-mafia" alt="Bộ Quần Áo Da Mafia Boy Dukero" style="width:250px; height:370px;">
+                    <h3>Bộ Quần Áo Da Mafia Boy Dukero</h3>
+                    <p><i>Giá: 790.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Bộ Quần Áo Da Mafia Boy Dukero', 790000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="bo quan -ao-da-nam-yodyvn1" alt="Bộ Quần Áo Da Nam Yodyvn1" style="width:250px; height:370px;">
+                    <h3>Bộ Quần Áo Da Nam Yodyvn1</h3>
+                    <p><i>Giá: 599.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Bộ Quần Áo Da Nam Yodyvn1', 599000)">Thêm giỏ hàng</button>
+                </div>
+                <div class="a1">
+                    <img src="quan-ao-da-nam-that-voi-quan-jogger-sao-cho-that-manly-_s2367" alt="Combo quần áo Jean bằng da cao cấp" style="width:250px; height:370px;">
+                    <h3>Combo quần áo Jean bằng da cao cấp</h3>
+                    <p><i>Giá: 569.000đ</i></p>
+                    <button onclick="mua()">Mua</button>
+                    <button onclick="addToCart('Combo quần áo Jean bằng da cao cấp', 569000)">Thêm giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="phan1">
+            <ul>
+                <li>CHĂM SÓC KHÁCH HÀNG</li>
+                <li>Trải nghiệm mua sắm 100% hài lòng</li>
+                <li>Hỏi đáp - FAQs</li>
+                <li>KIẾN THỨC MẶC ĐẸP</li>
+                <li>Hướng dẫn chọn size</li>
+                <li>Blog</li>
+                <li>Group mặc đẹp sống chất</li>
+            </ul>
+        </div>
+        <div class="phan2">
+            <ul>
+                <li>ĐỊA CHỈ LIÊN HỆ</li>
+                <li>Văn phòng và trung tâm vận hành Hà Nội: Tầng 3-4, Tòa nhà BMM, KM2, Đường Phùng Hưng, Phường Phúc La, Quận Hà Đông, TP Hà Nội</li>
+                <li>Văn phòng HCM: Lầu 1, Số 163 Trần Trọng Cung, Phường Tân Thuận Đông, Quận 7, Tp. Hồ Chí Minh</li>
+                <li>Trung tâm R&D: Tầng 2, NXLP - 24, Khu The Manhattan - Vinhomes Grand Park, TP. Thủ Đức, TP. HCM</li>
+                <li>Trung tâm vận hành Hồ Chí Minh: QQ8F+F28, Đường Số 98, Phường Thạnh Mỹ Lợi, Quận 2, Thành phố Hồ Chí Minh</li>
+            </ul>
+        </div>
+        <div class="phan3">
+            <ul>
+                <li>TÀI LIỆU - TUYỂN DỤNG</li>
+                <li>Tuyển dụng</li>
+                <li>Đăng ký bản quyền</li>
+                <li>VỀ COOLMATE</li>
+                <li>Coolmate 101</li>
+                <li>DVKH xuất sắc</li>
+                <li>Câu chuyện về Coolmate</li>
+                <li>Nhà máy</li>
+                <li>Care & Share</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="Untitled-1.js"></script>
+</body>
+</html>        
